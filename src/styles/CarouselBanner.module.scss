@@ -1,0 +1,18 @@
+.mainContainer {
+  padding: 2rem .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    max-width: 1037px;
+    height: auto;
+  }
+}
+
+.img {
+  display: block;
+  width: Max(100%, 310px);
+  height: auto;
+}
+
