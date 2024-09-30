@@ -1,0 +1,61 @@
+@use "./HeaderFont.scss";
+
+.footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 4px solid #1D1A31;
+  background: #b590e4;
+
+  .footerContainer {
+    width: clamp(320px, 100%, 1440px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    .footerContent {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 1.5rem 0rem;
+      border-bottom: 2px solid #551A8B;
+
+      .title {
+        flex: 1;
+        font-family: BebasNeue;
+        font-size: 3rem;
+        color: #551A8B;
+        font-weight: 700;
+      }
+
+      .desc {
+        flex: .75;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+    }
+
+    .footerMapSite {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: start;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+      gap: 2.5rem;
+      border-bottom: 2px solid #551A8B;
+    }
+
+    .footerRights {
+      padding: 1rem 0;
+      align-self: start;
+      font-weight: 700;
+    }
+  }
+}
