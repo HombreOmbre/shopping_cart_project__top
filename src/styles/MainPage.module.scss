@@ -1,0 +1,8 @@
+.mainPage {
+  flex: 1;
+  width: clamp(320px, 100%, 1440px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
