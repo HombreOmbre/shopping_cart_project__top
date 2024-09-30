@@ -1,0 +1,24 @@
+.mapSiteContainer {
+  flex: 1;
+
+  .title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: .6rem;
+  }
+
+  .links {
+    .link {
+      margin-bottom: .4rem;
+
+      .linkComp {
+        text-decoration: none;
+        color: #1D1A31;
+      }
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+}
