@@ -3,12 +3,14 @@ export class Product {
     #productName;
     #productPrice;
     #productAmount;
+    #productImg;
 
-    constructor(id, productName, productPrice) {
+    constructor(id, productName, productPrice, productImg) {
         this.#id = id;
         this.#productName = productName;
         this.#productPrice = productPrice;
         this.#productAmount = 1;
+        this.#productImg = productImg;
     }
 
     getId() {
@@ -21,6 +23,10 @@ export class Product {
 
     getProductPrice() {
         return this.#productPrice;
+    }
+
+    getProductImg() {
+        return this.#productImg;
     }
 
     getProductAmount() {
