@@ -26,8 +26,8 @@ describe('MainProvider', () => {
                     <p>Loading: {isLoading ? "Yes" : "No"}</p>
                     <p>Error: {isError || "None"}</p>
                     <p>Shopping Cart Items: {shoppingCart.length}</p>
-                    <button onClick={() => addProductsToCart(1, "Test Product", 100)}>Add Product</button>
-                    <button onClick={() => removeProductFromCart(1, 100)}>Remove Product</button>
+                    <button onClick={() => addProductsToCart(1, "Test Product", 100, "linkToImg")}>Add Product</button>
+                    <button onClick={() => removeProductFromCart(1)}>Remove Product</button>
                 </div>
             );
         };
