@@ -1,21 +1,27 @@
-import { useProducts } from "../customHooks/useProducts.jsx";
+import { Header } from "./Header.jsx";
+import { Footer } from "./Footer.jsx";
+import { useContext } from "react";
+import { ProductsContext } from "../context/ProductsContext.jsx";
+import "../styles/globals.scss";
+import styles from "../styles/App.module.scss";
+import { Outlet } from "react-router-dom";
+import { LoadingPage } from "./LoadingPage.jsx";
+import { ErrorPage } from "./ErrorPage.jsx";
 
 export const App = () => {
-  const { products, error, loading } = useProducts();
+    const { isError, isLoading } = useContext(ProductsContext);
 
-  if (error) return <div>{error}</div>;
-  if (loading) return <div>Loading...</div>;
+    if (isError) return <ErrorPage />;
 
-  return (
-      <ul>
-      {
-        products.length > 0 ?
-             products.map((product) => {
-               return (
-                   <li key={product.id}>{product.title}</li>
-               );
-             }) : null
-      }
-      </ul>
-  );
+    return (
+        <div className={styles.mainContainer}>
+            <Header/>
+            {
+                !isLoading ?
+                    <Outlet /> :
+                    <LoadingPage />
+            }
+            <Footer/>
+        </div>
+    );
 }
