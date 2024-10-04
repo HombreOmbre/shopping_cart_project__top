@@ -9,12 +9,12 @@ export const MainProvider = ({ children }) => {
     const { products, error, loading } = UseProducts();
     const [shoppingCart, setShoppingCart] = useState([]);
 
-    const addProduct = (id, name, price) => {
+    const addProduct = (id, name, price, imgLink) => {
         const indexOfProduct = shoppingCart.findIndex((product) => product.getId() === id );
         const tmpArr = [...shoppingCart];
 
         if (indexOfProduct === -1) {
-            const product = new Product(id, name, parseInt(price));
+            const product = new Product(id, name, parseInt(price), imgLink);
             tmpArr.push(product);
         } else {
             tmpArr[indexOfProduct].increaseProductPrice(parseInt(price));
@@ -24,7 +24,7 @@ export const MainProvider = ({ children }) => {
         setShoppingCart(tmpArr);
     }
 
-    const removeProduct = (id, price) => {
+    const removeProduct = (id) => {
         const indexOfProduct = shoppingCart.findIndex((product) => product.getId() === id);
         const tmpArr = [...shoppingCart];
 
@@ -32,7 +32,7 @@ export const MainProvider = ({ children }) => {
             return;
         }
 
-        tmpArr[indexOfProduct].decreaseProductPrice(price);
+        tmpArr[indexOfProduct].decreaseProductPrice(tmpArr[indexOfProduct].getProductBasicPrice());
         tmpArr[indexOfProduct].decreaseProductAmount();
 
         if (tmpArr[indexOfProduct].getProductAmount() === 0) {
