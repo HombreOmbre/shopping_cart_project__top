@@ -3,11 +3,13 @@ import { MainPage } from "../components/MainPage.jsx";
 import { ProductsPage } from "../components/ProductsPage.jsx";
 import { ProductCart } from "../components/ProductCart.jsx";
 import { CheckoutPage } from "../components/CheckoutPage.jsx";
+import { ErrorPage } from "../components/ErrorPage.jsx";
 
 export const routes = [
     {
       path: "/",
       element: <App />,
+      errorElement: <ErrorPage />,
       children: [
         {
             index: true,
