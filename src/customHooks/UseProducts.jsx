@@ -26,7 +26,7 @@ export const UseProducts = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(fetchProducts.bind(null, setProducts ,setError, setLoading), 0)
+        setTimeout(fetchProducts.bind(null, setProducts ,setError, setLoading), 3000)
     }, []);
 
     return { products, error, loading };
