@@ -4,9 +4,9 @@ import { useContext, useMemo } from "react";
 import { ShoppingCartContext } from "../context/ShoppingCartContext.jsx";
 
 export const Header = () => {
-    const shoppingCart = useContext(ShoppingCartContext)
+    const { shoppingCart } = useContext(ShoppingCartContext)
     const productsAmount = useMemo(() => {
-        return shoppingCart.shoppingCart.reduce((acc, item) => acc += item.getProductAmount(), 0)
+        return shoppingCart.reduce((acc, item) => acc += item.getProductAmount(), 0)
     },[shoppingCart]);
 
     return (
@@ -20,9 +20,9 @@ export const Header = () => {
                 <div className={styles.rightBox}>
                     <nav className={styles.nav}>
                         <NavLink className={styles.link} to="/">Home Page</NavLink>
-                        <NavLink className={styles.link} to="/">Products</NavLink>
-                        <NavLink className={styles.link} to="/">
-                            Checkout ({productsAmount})
+                        <NavLink className={styles.link} to="products">Products</NavLink>
+                        <NavLink className={styles.link} to="checkout">
+                            Checkout {" (" + productsAmount + ") "}
                         </NavLink>
                     </nav>
                 </div>
