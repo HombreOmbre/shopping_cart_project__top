@@ -1,0 +1,59 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MapSiteItem Component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="_mapSiteContainer_7314e2"
+  >
+    <h2
+      class="_title_7314e2"
+    >
+      Quick Links
+    </h2>
+    <ul
+      class="_links_7314e2"
+    >
+      <li
+        class="_link_7314e2"
+      >
+        <a
+          class="_linkComp_7314e2"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="_link_7314e2"
+      >
+        <a
+          class="_linkComp_7314e2"
+          href="/"
+        >
+          FAQ
+        </a>
+      </li>
+      <li
+        class="_link_7314e2"
+      >
+        <a
+          class="_linkComp_7314e2"
+          href="/"
+        >
+          Privacy Policy
+        </a>
+      </li>
+      <li
+        class="_link_7314e2"
+      >
+        <a
+          class="_linkComp_7314e2"
+          href="/"
+        >
+          Terms of Service
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

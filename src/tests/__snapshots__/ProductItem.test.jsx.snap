@@ -1,0 +1,50 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductItem Component > matches snapshot 1`] = `
+<DocumentFragment>
+  <a
+    class="_linkContainer_cca2e2"
+    href="/1"
+  >
+    <div
+      class="_imageContainer_cca2e2"
+    >
+      <img
+        alt="Test Product"
+        class="_cartImg_cca2e2"
+        src="https://via.placeholder.com/150"
+      />
+    </div>
+    <div
+      class="_details_cca2e2"
+    >
+      <h6
+        class="_title_cca2e2"
+      >
+        Test Product
+      </h6>
+      <p
+        class="_rate_cca2e2"
+      >
+        Rate:
+        <span
+          class="_greenRate_cca2e2"
+        >
+           4.5 
+        </span>
+        (100)
+      </p>
+      <p
+        class="_price_cca2e2"
+      >
+        $99.99
+      </p>
+      <span
+        class="_delivery_cca2e2"
+      >
+        Free delivery
+      </span>
+    </div>
+  </a>
+</DocumentFragment>
+`;

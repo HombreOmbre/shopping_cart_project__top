@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ErrorPage > matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="_errorPage_580988"
+  >
+    <h1
+      class="_header_580988"
+    >
+      Ooops!
+    </h1>
+    <p
+      class="_errorTxt_580988"
+    >
+      Something gone wrong...
+    </p>
+  </div>
+</DocumentFragment>
+`;

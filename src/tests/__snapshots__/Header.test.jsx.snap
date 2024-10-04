@@ -1,0 +1,51 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header Component > Header renders correctly and matches snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="_header_a5b446"
+  >
+    <div
+      class="_container_a5b446"
+    >
+      <div
+        class="_leftBox_a5b446"
+      >
+        <a
+          class="_link_a5b446"
+          href="/"
+        >
+          Shopperooo
+        </a>
+      </div>
+      <div
+        class="_rightBox_a5b446"
+      >
+        <nav
+          class="_nav_a5b446"
+        >
+          <a
+            aria-current="page"
+            class="_link_a5b446 active"
+            href="/"
+          >
+            Home Page
+          </a>
+          <a
+            class="_link_a5b446"
+            href="/products"
+          >
+            Products
+          </a>
+          <a
+            class="_link_a5b446"
+            href="/checkout"
+          >
+            Checkout  (0) 
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;
