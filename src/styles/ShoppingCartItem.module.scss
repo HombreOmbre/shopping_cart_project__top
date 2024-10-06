@@ -1,5 +1,6 @@
 .cartContainer {
-  width: 100%;
+  width: 50%;
+  align-self: start;
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
@@ -11,7 +12,7 @@
   gap: 2rem;
 
   .imgContainer {
-    min-width: 150px;
+    min-width: 200px;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -20,7 +21,7 @@
     .img {
       border-radius: 15px;
       display: block;
-      width: 75%;
+      width: 100%;
       height: auto;
     }
   }
@@ -33,7 +34,7 @@
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    gap: 2rem;
+    gap: .5rem;
 
     .title {
       font-size: 2rem;
@@ -80,6 +81,25 @@
     .price {
       font-size: 2.5rem;
       font-weight: 700;
+      margin: 0;
+    }
+
+    .delBtn {
+      font-size: 1rem;
+      font-weight: 700;
+      padding: .5rem;
+      background: #1D1A31;
+      color: #eee;
+      border-radius: .5rem;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+        -webkit-box-shadow: 0px 0px 6px 2px rgba(103, 85, 191, 1);
+        -moz-box-shadow: 0px 0px 6px 2px rgba(103, 85, 191, 1);
+        box-shadow: 0px 0px 6px 2px rgba(103, 85, 191, 1);
+        color: #8c76ec;
+      }
     }
   }
 }
