@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../context/ShoppingCartContext.jsx";
 
-// TODO: add delete product button
 export const ShoppingCartItem = ({ product }) => {
-    const { addProductsToCart, removeProductFromCart } = useContext(ShoppingCartContext);
+    const { addProductsToCart, removeProductFromCart, deleteProductFromCart } = useContext(ShoppingCartContext);
 
     const handleRemoveBtnClick = () => {
         removeProductFromCart(product.getId());
@@ -15,6 +14,10 @@ export const ShoppingCartItem = ({ product }) => {
 
     const handleAddBtnClick = () => {
         addProductsToCart(product.getId(), product.getProductName(), product.getProductBasicPrice(), product.getProductImg());
+    }
+
+    const handleDeleteBtnClick = () => {
+        deleteProductFromCart(product.getId());
     }
 
     return (
@@ -44,6 +47,12 @@ export const ShoppingCartItem = ({ product }) => {
                     </button>
                 </div>
                 <p className={styles.price}>${product.getProductPrice()}</p>
+                <button
+                    className={styles.delBtn}
+                    onClick={handleDeleteBtnClick}
+                >
+                    Delete product
+                </button>
             </div>
         </div>
     );
