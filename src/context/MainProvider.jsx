@@ -42,6 +42,19 @@ export const MainProvider = ({ children }) => {
         setShoppingCart(tmpArr);
     }
 
+    const deleteProduct = (id) => {
+        const indexOfProduct = shoppingCart.findIndex((product) => product.getId() === id);
+        const tmpArr = [...shoppingCart];
+
+        if (indexOfProduct === -1) {
+            return;
+        }
+
+        tmpArr.splice(indexOfProduct, 1);
+
+        setShoppingCart(tmpArr);
+    }
+
     return (
         <ProductsContext.Provider value={{
             products: products,
@@ -51,7 +64,8 @@ export const MainProvider = ({ children }) => {
             <ShoppingCartContext.Provider value={{
                 shoppingCart: shoppingCart,
                 addProductsToCart: addProduct,
-                removeProductFromCart: removeProduct
+                removeProductFromCart: removeProduct,
+                deleteProductFromCart: deleteProduct,
             }}>
                 {children}
             </ShoppingCartContext.Provider>
