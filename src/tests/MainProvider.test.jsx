@@ -15,10 +15,15 @@ vi.mock('../customHooks/UseProducts', () => ({
 }));
 
 describe('MainProvider', () => {
-    it('provides products and shopping cart contexts', async () => {
+    it(async () => {
         const TestComponent = () => {
             const { products, isLoading, isError } = React.useContext(ProductsContext);
-            const { shoppingCart, addProductsToCart, removeProductFromCart } = React.useContext(ShoppingCartContext);
+            const {
+                shoppingCart,
+                addProductsToCart,
+                removeProductFromCart,
+                deleteProductFromCart
+            } = React.useContext(ShoppingCartContext);
 
             return (
                 <div>
@@ -28,13 +33,14 @@ describe('MainProvider', () => {
                     <p>Shopping Cart Items: {shoppingCart.length}</p>
                     <button onClick={() => addProductsToCart(1, "Test Product", 100, "linkToImg")}>Add Product</button>
                     <button onClick={() => removeProductFromCart(1)}>Remove Product</button>
+                    <button onClick={() => deleteProductFromCart(1)}>Delete Product</button>
                 </div>
             );
         };
 
         render(
             <MainProvider>
-                <TestComponent />
+            <TestComponent />
             </MainProvider>
         );
 
@@ -62,5 +68,18 @@ describe('MainProvider', () => {
         await waitFor(() => {
             expect(screen.getByText(/Shopping Cart Items: 0/i)).toBeInTheDocument();
         });
-    });
+
+        await userEvent.click(screen.getByText('Add Product'));
+        await userEvent.click(screen.getByText('Add Product'));
+        await waitFor(() => {
+            expect(screen.getByText(/Shopping Cart Items: 1/i)).toBeInTheDocument();
+        });
+
+        await userEvent.click(screen.getByText('Delete Product'));
+        await waitFor(() => {
+            expect(screen.getByText(/Shopping Cart Items: 0/i)).toBeInTheDocument();
+        })
+
+
+    }, 'provides products and shopping cart contexts');
 });
