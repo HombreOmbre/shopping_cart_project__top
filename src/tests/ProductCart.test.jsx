@@ -78,6 +78,12 @@ describe('ProductCart Component', () => {
         const addButton = screen.getByRole('button', { name: /add to basket/i });
         expect(addButton).toBeInTheDocument();
 
+        const selectElement = screen.getByLabelText(/product quantity/i);
+        expect(selectElement).toHaveValue('1');
+
+        fireEvent.change(selectElement, { target: { value: '3' } });
+        expect(selectElement).toHaveValue('3');
+
         fireEvent.click(addButton);
 
         expect(addProductsToCartMock).toHaveBeenCalledTimes(1);
@@ -85,7 +91,8 @@ describe('ProductCart Component', () => {
             mockProduct.id,
             mockProduct.title,
             mockProduct.price,
-            mockProduct.image
+            mockProduct.image,
+            3
         );
     });
 });
