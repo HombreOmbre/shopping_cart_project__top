@@ -5,7 +5,7 @@ import { ShoppingCartContext } from '../context/ShoppingCartContext';
 import { describe, it, vi, expect } from 'vitest';
 import { Product } from '../classes/Product';
 
-const mockProduct = new Product(1, 'Test Product', 100, "1", 'test-product.jpg');
+const mockProduct = new Product(1, 'Test Product', 100, "1", 'test-product.jpg', 1);
 const mockAddProduct = vi.fn();
 const mockRemoveProduct = vi.fn();
 
@@ -55,7 +55,8 @@ describe('ShoppingCartItem Component', () => {
             mockProduct.getId(),
             mockProduct.getProductName(),
             mockProduct.getProductBasicPrice(),
-            mockProduct.getProductImg()
+            mockProduct.getProductImg(),
+            1
         );
     });
 
