@@ -27,7 +27,7 @@ export const ProductItem = ({ product }) => {
                     <span className={color}> {product.rating.rate} </span>
                     ({product.rating.count})
                 </p>
-                <p className={styles.price}>${product.price}</p>
+                <p className={styles.price}>${product.price.toFixed(2)}</p>
                 <span className={styles.delivery}>Free delivery</span>
             </div>
         </Link>
