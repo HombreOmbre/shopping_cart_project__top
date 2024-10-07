@@ -6,11 +6,11 @@ export class Product {
     #productImg;
     #productBasicPrice;
 
-    constructor(id, productName, productPrice, productImg) {
+    constructor(id, productName, productPrice, productImg, productAmount) {
         this.#id = id;
         this.#productName = productName;
-        this.#productPrice = productPrice;
-        this.#productAmount = 1;
+        this.#productPrice = productPrice * productAmount;
+        this.#productAmount = productAmount;
         this.#productImg = productImg;
         this.#productBasicPrice = productPrice;
     }
@@ -47,8 +47,8 @@ export class Product {
         this.#productPrice -= price;
     }
 
-    increaseProductAmount() {
-        this.#productAmount += 1;
+    increaseProductAmount(quantity) {
+        this.#productAmount += quantity;
     }
 
     decreaseProductAmount() {
