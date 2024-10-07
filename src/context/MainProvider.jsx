@@ -9,16 +9,18 @@ export const MainProvider = ({ children }) => {
     const { products, error, loading } = UseProducts();
     const [shoppingCart, setShoppingCart] = useState([]);
 
-    const addProduct = (id, name, price, imgLink) => {
+    const addProduct = (id, name, price, imgLink, quantity) => {
         const indexOfProduct = shoppingCart.findIndex((product) => product.getId() === id );
         const tmpArr = [...shoppingCart];
 
         if (indexOfProduct === -1) {
-            const product = new Product(id, name, parseInt(price), imgLink);
+            const product = new Product(id, name, price, imgLink, quantity);
             tmpArr.push(product);
         } else {
-            tmpArr[indexOfProduct].increaseProductPrice(parseInt(price));
-            tmpArr[indexOfProduct].increaseProductAmount();
+            tmpArr[indexOfProduct].increaseProductPrice(
+                tmpArr[indexOfProduct].getProductBasicPrice() * quantity
+            );
+            tmpArr[indexOfProduct].increaseProductAmount(quantity);
         }
 
         setShoppingCart(tmpArr);
