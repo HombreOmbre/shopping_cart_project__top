@@ -13,7 +13,7 @@ export const ShoppingCartItem = ({ product }) => {
     }
 
     const handleAddBtnClick = () => {
-        addProductsToCart(product.getId(), product.getProductName(), product.getProductBasicPrice(), product.getProductImg());
+        addProductsToCart(product.getId(), product.getProductName(), product.getProductBasicPrice(), product.getProductImg(), 1);
     }
 
     const handleDeleteBtnClick = () => {
@@ -46,7 +46,7 @@ export const ShoppingCartItem = ({ product }) => {
                         +
                     </button>
                 </div>
-                <p className={styles.price}>${product.getProductPrice()}</p>
+                <p className={styles.price}>${product.getProductPrice().toFixed(2)}</p>
                 <button
                     className={styles.delBtn}
                     onClick={handleDeleteBtnClick}
