@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../context/ShoppingCartContext.jsx";
 import styles from "../styles/CheckoutPage.module.scss";
 import { ShoppingCartItem } from "./ShoppingCartItem.jsx";
+import { AmountOfShoppingCart } from "./AmountOfShoppingCart.jsx";
 
 export const CheckoutPage = () => {
     const { shoppingCart } = useContext(ShoppingCartContext);
+
     return (
         <div className={styles.container}>
 
@@ -20,11 +22,11 @@ export const CheckoutPage = () => {
                                 />
                             ))
                         }
-
                     </>
                 ) :
                 <h2 className={styles.infoTxt}>There is no products in the shopping cart</h2>
             }
+            { shoppingCart.length > 0 && <AmountOfShoppingCart /> }
         </div>
     );
 }
